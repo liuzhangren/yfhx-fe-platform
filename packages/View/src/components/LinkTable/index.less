@@ -1,0 +1,109 @@
+.searchFormWrap {
+
+  position: relative;
+}
+
+.searchForm {
+  padding-left: 6px;
+  padding-top: 6px;
+  height: auto;
+  min-height: 40px;
+  max-height: 60px;
+  z-index: 1000;
+  .btns {
+    float: right;
+    padding-right: 16px;
+  }
+
+  :global {
+    .ant-form-item {
+      display: flex;
+      margin-bottom: 0px;
+    }
+
+    .ant-form-item-control-wrapper {
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .ant-row {
+
+      .ant-btn-primary {
+        color: #fff;
+        // background-color: #999;
+        // border-color: #999;
+        border-radius: 0;
+      }
+
+      .ant-btn {
+        border-radius: 0;
+      }
+    }
+
+    .ant-form-explain {
+      position: absolute;
+      line-height: 1.2;
+      min-height: auto;
+      font-size: 12px;
+    }
+
+  }
+}
+
+.expandForm {
+
+  position: absolute;
+  box-shadow: 0 0 3px 4px #ddd;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+  background: #fff;
+  opacity: 0;
+  transition: all linear 0.3s;
+
+  transform: scale(1, 0);
+  transform-origin: top left;
+
+  :global {
+    .ant-form-item label {
+      max-width: 100%;
+      overflow: hidden;
+      display: block;
+      text-overflow: ellipsis;
+    }
+  }
+
+}
+
+.expandFormShow {
+  opacity: 1;
+  max-height: 300px;
+  transform: scale(1, 1);
+}
+
+.expandFormHidden {
+  opacity: 0;
+}
+
+.formItem {
+  overflow: hidden;
+}
+
+
+.lableCol {
+
+  position: relative;
+  padding-right: 8px;
+
+
+}
+
+.expandFormShow {
+  .lableCol {
+    width: 138px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+}

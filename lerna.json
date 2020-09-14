@@ -1,0 +1,9 @@
+{
+  "packages": [
+    "packages/*"
+  ],
+  "ignoreChanges": [
+    "packages/Umi/src"
+  ],
+  "version": "0.0.0"
+}

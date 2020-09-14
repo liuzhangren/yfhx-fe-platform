@@ -1,0 +1,21 @@
+
+#logo > a > img{
+    width: 32px;
+    height: 32px;
+}
+
+.antd-pro-components-top-nav-header-index-main{
+    display: flex;
+}
+
+.antd-pro-components-top-nav-header-index-logo{
+    float: left;
+}
+
+.antd-pro-components-top-nav-header-index-left{
+    float: left;
+}
+
+.antd-pro-components-card-actions-index-Container{
+    display: -ms-flexbox;
+}

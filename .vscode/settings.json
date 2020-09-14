@@ -1,0 +1,6 @@
+{
+    "javascript.implicitProjectConfig.experimentalDecorators": true,
+    "svn.delete.ignoredRulesForDeletedFiles": [
+        "lerna-debug.log"
+    ]
+}

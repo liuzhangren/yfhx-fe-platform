@@ -1,0 +1,232 @@
+.logo {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: rgba(0, 0, 0, 0.85);
+  .logoImg {
+    margin-right: 10px;
+  }
+
+
+}
+
+.backArea {
+  line-height: 40px;
+  cursor: pointer;
+  font-size: 18px;
+  .iconWrap {
+    font-size: 15px;
+  }
+  .iconWrap:hover {
+    color: #0066ff;
+  }
+
+  .back {
+    margin-right: 7px;
+    margin-left: 10px;
+  }
+
+  .backName {
+    display: inline-block;
+    width: calc(100% - 65px);
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+
+  }
+
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 10px;
+  font-size: 15px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f2f2f2;
+  }
+
+  .icon {
+    display: inline-block;
+    height: 13px;
+    vertical-align: middle;
+    border-width: 0 0 2px 2px;
+    border-style: solid;
+    border-color: #aaa;
+    width: 13px;
+    margin-right: 10px;
+
+  }
+}
+
+.checkboxItem {
+  display: flex;
+  padding: 10px 0;
+
+
+
+  &.hasChoosed {
+    :global {
+      .ant-checkbox-wrapper {
+        color: #aaa;
+      }
+    }
+
+    .accountLine {
+      &::before {
+        background: #bbb;
+      }
+    }
+  }
+
+  .box {
+    flex: auto;
+
+
+  }
+
+  .next {
+    width: 80px;
+    cursor: pointer;
+
+    &.hasChoosed {
+      cursor: not-allowed;
+      color: #aaa;
+    }
+
+    .nexticon {
+      margin-right: 6px;
+    }
+  }
+}
+
+.all {
+  margin-bottom: 8px;
+}
+
+.wrap {
+
+  :global {
+    .ant-checkbox-group {
+      width: 100%;
+      font-size: 15px;
+    }
+
+    .ant-checkbox-wrapper {
+      font-size: 15px;
+    }
+
+  }
+}
+
+:global {
+  .ant-select-dropdown-menu {
+    .userItem {
+      margin-bottom: 5px;
+      line-height: 1.5;
+
+      .userName {
+        font-size: 18px;
+      }
+
+      .postName,
+      .orgName {
+        color: #999;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}
+
+
+
+:global {
+  .ant-select-selection__choice {
+
+    .postName,
+    .orgName {
+      display: none;
+    }
+  }
+
+}
+
+.flowModalSelect {
+  :global {
+    .ant-select-selection__placeholder {
+      display: none !important;
+    }
+
+    .ant-select-selection {
+      border: 0 !important;
+      box-shadow: none !important;
+
+      &:hover,
+      &:focus {
+        border: 0;
+        box-shadow: none !important;
+      }
+    }
+
+    .ant-select-selection--multiple .ant-select-search--inline .ant-select-search__field {
+      width: auto;
+    }
+
+    .ant-select-search__field::-webkit-input-placeholder {
+      color: #bbb;
+    }
+
+    .ant-select-search__field::-moz-placeholder {
+      color: #bbb;
+    }
+
+    .ant-select-search__field:-ms-input-placeholder {
+      color: #bbb;
+    }
+  }
+}
+
+.breadcrumbWrap {
+  :global {
+    .ant-breadcrumb {
+      overflow: hidden;
+      font-size: 15px;
+      margin-left: 33px;
+      // text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .ant-breadcrumb>span {
+      // float: left;
+    }
+  }
+}
+
+.rightWrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.accountLine {
+  position: relative;
+  padding-left: 12px;
+}
+
+.accountLine::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  top: 4px;
+  bottom: 4px;
+  left: 5px;
+  background: #999;
+}

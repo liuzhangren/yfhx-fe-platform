@@ -1,0 +1,34 @@
+# OSX
+#
+.DS_Store
+
+# Android/IJ
+#
+.idea
+
+# node.js
+#
+node_modules/
+npm-debug.log*
+pnpm*.log
+
+dist
+.tmp
+tmp
+
+prisma/migrations
+prisma/*.db
+failed-migrationProgress-*
+failed-applyMigration-*
+
+package-lock.json
+
+yarn.lock
+yarn*.log
+.lock
+.cache
+.env
+.snv
+packages/View/node_modules.zip
+packages/Umi/node_modules.rar
+packages/Umi/src/settings.js

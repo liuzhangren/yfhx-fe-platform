@@ -1,0 +1,60 @@
+.lableCol {
+  position: relative;
+  padding-right: 8px;
+  width: 138px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.itemWrapper {
+  // background-color: red;
+  // display: flex;
+  position: relative;
+  :global {
+    .ant-form-item-label > label::after {
+      content: '';
+      position: relative;
+      top: -0.5px;
+      margin: 0 8px 0 2px;
+    }
+  }
+}
+
+.searchForm {
+
+  :global {
+    .ant-form-item {
+      display: flex;
+    }
+
+    .ant-form-item-label {
+      width: 146px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .ant-form-item-control-wrapper {
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .ant-row {
+
+      .ant-btn-primary {
+        color: #fff;
+        // background-color: #999;
+        // border-color: #999;
+        border-radius: 0;
+      }
+
+      .ant-btn {
+        border-radius: 0;
+      }
+    }
+
+
+
+  }
+}

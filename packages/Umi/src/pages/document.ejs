@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <title>生产管理支持平台 | 生产支持</title>
+  <link rel="icon" href="/favicon.png" type="image/x-icon" />
+
+
+  <!--[if lte IE 11]> 
+      <script>
+        window.location = "/support/index.html"
+      </script>
+    <![endif]-->
+
+  <!--[if IE 9]> 
+      <script src="/compatible/polyfill/requestAnimationFrame.js"></script>
+      <script src="/compatible/ie9.js"></script>
+      <link rel="stylesheet" href="/compatible/ie9.css"></link>
+    <![endif]-->
+
+  <!--[if IE 10]> 
+      <script src="/compatible/ie10.js"></script>
+
+
+      <link rel="stylesheet" href="/compatible/ie10.css"></link>
+    <![endif]-->
+
+  <style>
+    #noWebKit {
+      position: absolute;
+      top: 0;
+      background-color: rgba(0, 0, 0, 0.54);
+      width: 100%;
+      text-align: center;
+      padding: 10px;
+      z-index: 5;
+      display: none;
+      color: #fff;
+    }
+
+    .noTips {
+      margin-left: 20px;
+    }
+
+    .noWebKit_mask {
+      position: absolute;
+      top: 50px;
+      width: 100vw;
+      height: calc(100vh - 50px);
+      z-index: 4;
+      left: 0;
+    }
+
+  </style>
+
+</head>
+
+<body>
+  <noscript>对不起您的浏览器不支持Js脚本语言,请考虑升级当前浏览器（Google / IE 10 +）</noscript>
+  <!-- <div id="noWebKit">
+    <span>为了更好的体验本系统，请使用chrome浏览器</span>
+    <button type="submit" class="ant-btn ant-btn-primary" style="margin-left: 15px;"><a
+        href=".rar">下载chrome</a></button>
+    <button type="submit" class="ant-btn noTips">不再提示</button>
+  </div> -->
+  <div id="root">
+    <style>
+      .page-loading-warp {
+        padding: 120px 120px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .ant-spin {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        color: rgba(0, 0, 0, 0.65);
+        font-size: 14px;
+        font-variant: tabular-nums;
+        line-height: 1.5;
+        list-style: none;
+        -webkit-font-feature-settings: 'tnum';
+        font-feature-settings: 'tnum';
+        position: absolute;
+        display: none;
+        color: #1890ff;
+        text-align: center;
+        vertical-align: middle;
+        opacity: 0;
+        -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+        transition: -webkit-transform 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+        transition: transform 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+        transition: transform 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86), -webkit-transform 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+      }
+
+      .ant-spin-spinning {
+        position: static;
+        display: inline-block;
+        opacity: 1;
+      }
+
+      .ant-spin-dot {
+        position: relative;
+        display: inline-block;
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+      }
+
+      .ant-spin-dot-item {
+        position: absolute;
+        display: block;
+        width: 9px;
+        height: 9px;
+        background-color: #1890ff;
+        border-radius: 100%;
+        -webkit-transform: scale(0.75);
+        -ms-transform: scale(0.75);
+        transform: scale(0.75);
+        -webkit-transform-origin: 50% 50%;
+        -ms-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        opacity: 0.3;
+        -webkit-animation: antSpinMove 1s infinite linear alternate;
+        animation: antSpinMove 1s infinite linear alternate;
+      }
+
+      .ant-spin-dot-item:nth-child(1) {
+        top: 0;
+        left: 0;
+      }
+
+      .ant-spin-dot-item:nth-child(2) {
+        top: 0;
+        right: 0;
+        -webkit-animation-delay: 0.4s;
+        animation-delay: 0.4s;
+      }
+
+      .ant-spin-dot-item:nth-child(3) {
+        right: 0;
+        bottom: 0;
+        -webkit-animation-delay: 0.8s;
+        animation-delay: 0.8s;
+      }
+
+      .ant-spin-dot-item:nth-child(4) {
+        bottom: 0;
+        left: 0;
+        -webkit-animation-delay: 1.2s;
+        animation-delay: 1.2s;
+      }
+
+      .ant-spin-dot-spin {
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        -webkit-animation: antRotate 1.2s infinite linear;
+        animation: antRotate 1.2s infinite linear;
+      }
+
+      .ant-spin-lg .ant-spin-dot {
+        font-size: 32px;
+        width: 32px;
+        height: 32px;
+      }
+
+      .ant-spin-lg .ant-spin-dot i {
+        width: 14px;
+        height: 14px;
+      }
+
+      @media all and (-ms-high-contrast: none),
+      (-ms-high-contrast: active) {
+        .ant-spin-blur {
+          background: #fff;
+          opacity: 0.5;
+        }
+      }
+
+      @-webkit-keyframes antSpinMove {
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes antSpinMove {
+        to {
+          opacity: 1;
+        }
+      }
+
+      @-webkit-keyframes antRotate {
+        to {
+          -webkit-transform: rotate(405deg);
+          transform: rotate(405deg);
+        }
+      }
+
+      @keyframes antRotate {
+        to {
+          -webkit-transform: rotate(405deg);
+          transform: rotate(405deg);
+        }
+      }
+
+    </style>
+
+    <div class="page-loading-warp">
+      <div class="ant-spin ant-spin-lg ant-spin-spinning">
+        <span class="ant-spin-dot ant-spin-dot-spin"><i class="ant-spin-dot-item"></i><i
+            class="ant-spin-dot-item"></i><i class="ant-spin-dot-item"></i><i class="ant-spin-dot-item"></i></span>
+      </div>
+    </div>
+    <div style="text-align: center;font-size: 18px; color: #999;">加载中...</div>
+  </div>
+  <script>
+    function remRender() {
+      var whdef = 100 / 1920; // 表示1920的设计图,使用100PX的默认值
+      var wH = document.body.clientHeight; // 当前窗口的高度
+      var wW = document.body.clientWidth; // 当前窗口的宽度
+      var rem = wW * whdef; // 以默认比例值乘以当前窗口宽度,得到该宽度下的相应FONT-SIZE值
+      document.getElementsByTagName("html")[0].style.fontSize = rem + "px";
+    }
+    window.addEventListener("resize", function () {
+      remRender()
+    })
+    remRender()
+    if (!window.console) {
+      window.console = {};
+    }
+    if (!window.console.log) {
+      window.console.log = function (msg) {};
+    }
+
+    // 获取IE版本
+    // function IEVersion() {
+    //     // 取得浏览器的userAgent字符串
+    //     var userAgent = navigator.userAgent;
+    //     // 判断是否为小于IE11的浏览器
+    //     var isLessIE11 = userAgent.indexOf('compatible') > -1 && userAgent.indexOf('MSIE') > -1;
+    //     // 判断是否为IE的Edge浏览器
+    //     var isEdge = userAgent.indexOf('Edge') > -1 && !isLessIE11;
+    //     // 判断是否为IE11浏览器
+    //     var isIE11 = userAgent.indexOf('Trident') > -1 && userAgent.indexOf('rv:11.0') > -1;
+    //     if (isLessIE11) {
+    //         var IEReg = new RegExp('MSIE (\\d+\\.\\d+);');
+    //         // 正则表达式匹配浏览器的userAgent字符串中MSIE后的数字部分，，这一步不可省略！！！
+    //         IEReg.test(userAgent);
+    //         // 取正则表达式中第一个小括号里匹配到的值
+    //         var IEVersionNum = parseFloat(RegExp['$1']);
+    //         if (IEVersionNum === 7) {
+    //             // IE7
+    //             return 7
+    //         } else if (IEVersionNum === 8) {
+    //             // IE8
+    //             return 8
+    //         } else if (IEVersionNum === 9) {
+    //             // IE9
+    //             return 9
+    //         } else if (IEVersionNum === 10) {
+    //             // IE10
+    //             return 10
+    //         } else {
+    //             // IE版本<7
+    //             return 6
+    //         }
+    //     } else if (isEdge) {
+    //         // edge
+    //         return 'edge'
+    //     } else if (isIE11) {
+    //         // IE11
+    //         return 11
+    //     } else {
+    //         // 不是ie浏览器
+    //         return -1
+    //     }
+    // }
+    // var isWebKit = navigator.userAgent.indexOf('WebKit') > -1 // 是否是WebKit 内核 
+
+    // var version = IEVersion();
+    // var pass = version >= 10 || version === 'edge'
+    // if (!isWebKit && !pass) {
+    //     var noWebKit = document.getElementById("noWebKit");
+    //     noWebKit.style.display = "block";
+    //     noWebKit.getElementsByClassName("noTips")[0].addEventListener("click", function() {
+    //         noWebKit.style.display = "none"
+    //     })
+
+    // }
+
+  </script>
+</body>
+
+</html>

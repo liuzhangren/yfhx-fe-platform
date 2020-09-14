@@ -1,0 +1,17 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "lernaboot": "npx lerna bootstrap",
+    "lernaclean": "npx lerna clean",
+    "addView": "npx lerna add view --scope umi"
+  },
+  "devDependencies": {
+    "lerna": "^3.20.2"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "react-resizable": "^1.10.1"
+  },
+  "__npminstall_done": false
+}

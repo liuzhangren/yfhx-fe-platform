@@ -1,0 +1,30 @@
+.MainSubTable {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  //padding: 0 4px;
+
+  .Sub {
+    flex: auto;
+  }
+
+  .Main {
+    height: 50%;
+    overflow: auto;
+  }
+}
+
+:global {
+  .MainTable {
+    padding: 0 4px;
+    overflow: hidden auto;
+
+    .ant-collapse-borderless>.ant-collapse-item>.ant-collapse-content>.ant-collapse-content-box {
+      padding: 0;
+    }
+
+    .ant-collapse>.ant-collapse-item.ant-collapse-no-arrow>.ant-collapse-header {
+      padding-left: 6px;
+    }
+  }
+}

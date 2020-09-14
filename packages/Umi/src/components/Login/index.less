@@ -1,0 +1,154 @@
+// @import '~antd/lib/style/themes/default.less';
+
+.login {
+  :global {
+    .ant-tabs .ant-tabs-bar {
+      margin-bottom: 0.24rem;
+      text-align: center;
+      border-bottom: 0;
+    }
+
+    .ant-input.ant-input-lg {
+      height: 0.63rem !important;
+    }
+
+    .ant-btn.ant-btn-lg {
+      width: 2.6rem;
+      height: 0.62rem !important;
+      background: rgba(1, 132, 255, 1);
+      border-radius: 0.04rem;
+      font-size: 0.28rem;
+    }
+
+    .ant-form-explain {
+      position: absolute;
+    }
+
+    .ant-input-affix-wrapper .ant-input:not(:first-child) {
+      padding-left: 0.65rem;
+    }
+
+    .ant-input-prefix {
+
+      img {
+        width: 0.29rem;
+        height: 0.29rem;
+      }
+    }
+
+    .ant-input-prefix::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0.02rem;
+      bottom: 0;
+      width: 0.02rem;
+      height: 0.26rem;
+      background: #78a5ce;
+      right: -0.1rem;
+    }
+
+    .ant-input-lg {
+      padding: 0.06rem 0.11rem;
+      font-size: 0.16rem;
+      height: 0.63rem;
+      border: 1px solid rgba(120, 165, 206, 1);
+      border-radius: 0.04rem;
+    }
+
+    .ant-form-item {
+      margin-bottom: 0.24rem;
+    }
+
+    .username.ant-form-item {
+      margin: 0 0 0.44rem;
+    }
+  }
+
+  .btns {
+    margin-top: 0.30rem;
+
+    :global {
+      .ant-form-item-children {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+      }
+    }
+
+    .reset {
+      background: rgba(120, 165, 206, 1);
+      border-radius: 4px;
+      color: #fff;
+
+      &:hover,
+      &:focus,
+      &.active,
+      &:active {
+        background-color: rgba(120, 165, 206, 0.7) !important;
+        border-color: rgba(120, 165, 206, 0.7) !important;
+        color: #fff !important;
+      }
+
+    }
+  }
+
+  .remember {
+    color: rgba(120, 165, 206, 1);
+
+    :global {
+      .ant-form-item-control {
+        line-height: 1;
+      }
+
+      .ant-checkbox-inner {
+        border: 1px solid rgba(20, 137, 204, 1);
+      }
+
+      label {
+        font-size: 0.18rem;
+      }
+
+      .ant-checkbox-wrapper {
+        color: rgba(120, 165, 206, 1);
+      }
+    }
+  }
+
+
+
+  .getCaptcha {
+    display: block;
+    width: 100%;
+  }
+
+  .icon {
+    margin-left: 0.16rem;
+    color: rgba(0, 0, 0, 0.2);
+    font-size: 0.24rem;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: color 0.3s;
+
+    // &:hover {
+    //   color: @primary-color;
+    // }
+  }
+
+  .other {
+    margin-top: 0.24rem;
+    line-height: 0.22rem;
+    text-align: left;
+
+    .register {
+      float: right;
+    }
+  }
+
+  .prefixIcon {
+    color: rgba(0, 0, 0, 0.25);
+    font-size: 0.14rem;
+  }
+
+  .submit {}
+}

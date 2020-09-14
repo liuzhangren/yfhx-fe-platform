@@ -1,0 +1,142 @@
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  border: 1px solid #000000;
+  text-overflow: ellipsis;
+}
+
+.clickRowStyle {
+  background-color: #ccefff;
+}
+
+
+
+.ant-table-tbody>.clickRowStyle>td {
+  background-color: #ccefff;
+}
+
+.ant-table-tbody>.clickRowStyle:hover>td {
+  background: #ccefff;
+}
+
+:global {
+  .ClickRowStyle {
+    background-color: #ccefff;
+
+    td {
+      background-color: #ccefff;
+    }
+  }
+
+  .RowDouble {
+    background-color: #f9f9f9;
+
+    td {
+      background-color: #f9f9f9;
+    }
+  }
+
+  .ant-table-tbody>tr.ant-table-row-selected.ClickRowStyle td {
+    background-color: #ccefff;
+  }
+
+  .ant-table-tbody>tr.ant-table-row-selected.RowDouble td {
+    background-color: #f9f9f9;
+  }
+
+  .ant-table-tbody>tr.ClickRowStyle:hover:not(.ant-table-expanded-row):not(.ant-table-row-selected)>td {
+    background-color: #ccefff;
+  }
+}
+
+
+
+:global {
+
+  // //table header样式
+  .ant-table-small>.ant-table-content>.ant-table-scroll>.ant-table-header>table>.ant-table-thead>tr>th,
+  .ant-table-small>.ant-table-content>.ant-table-fixed-right>.ant-table-header>table>.ant-table-thead>tr>th,
+  .ant-table-small>.ant-table-content>.ant-table-fixed-left>.ant-table-header>table>.ant-table-thead>tr>th,
+  .ant-table-small>.ant-table-content .ant-table-header {
+    background: #f2f2f2;
+  }
+
+  .ant-table-pagination.ant-pagination {
+    margin: 6px 10px
+  }
+
+  td,
+  th {
+    padding: 5px 8px !important;
+  }
+
+  // .ant-table-small {
+  //   border-radius: 0;
+  //   border: 1px solid #ddd;
+  // }
+
+
+
+  // .ant-table-bordered .ant-table-thead>tr>th,
+  // .ant-table-small.ant-table-bordered .ant-table-fixed-left .ant-table-thead>tr>th:last-child {
+  //   border-right: 1px solid #ddd;
+  // }
+}
+
+.tableWrap {
+
+  // :global {
+  //   .ant-table-body {
+  //     overflow: auto !important;
+  //   }
+  // }
+  background: #fff;
+
+  .titleWrap {
+    :global {
+      display: flex;
+      padding: 4px 0px 0px 4px;
+      background-color: #fafafa;
+      border-style: solid;
+      border-color: #ddd;
+      border-width: 1px 1px 0px;
+
+      .ant-btn {
+        border-radius: 0;
+        margin-right: 4px;
+        margin-bottom: 4px;
+      }
+
+
+    }
+  }
+
+  :global {
+    .ant-table-title {
+      background-color: rgb(242, 242, 242);
+    }
+
+    .react-resizable {
+      position: relative;
+      background-clip: padding-box;
+    }
+
+    .react-resizable-handle {
+      position: absolute;
+      width: 10px;
+      height: 100%;
+      bottom: 0;
+      right: -5px;
+      cursor: col-resize;
+      z-index: 1;
+    }
+  }
+}
+
+a.viewRow:hover {
+  color: #5cb85c !important;
+}
+
+a.rowDelete:hover {
+  color: #ff008c !important;
+}

@@ -1,0 +1,102 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>系统暂时不支持</title>
+</head>
+<script>
+  // 如果不是IE则跳转到首页
+  var isIE = /MSIE.*?;/.exec(window.navigator.userAgent);
+  if (isIE == null) {
+    window.location = "/"
+  }
+
+  // 得到当前系统信息
+  function getOSInfo() {
+    var userAgent = navigator.userAgent.toLowerCase();
+    var name = 'Unknown';
+    var version = "Unknown";
+    if (userAgent.indexOf("win") > -1) {
+      name = "Windows";
+      if (userAgent.indexOf("windows nt 5.0") > -1) {
+        version = "Windows 2000";
+      } else if (userAgent.indexOf("windows nt 5.1") > -1 || userAgent.indexOf("windows nt 5.2") > -1) {
+        version = "Windows XP";
+      } else if (userAgent.indexOf("windows nt 6.0") > -1) {
+        version = "Windows Vista";
+      } else if (userAgent.indexOf("windows nt 6.1") > -1 || userAgent.indexOf("windows 7") > -1) {
+        version = "Windows 7";
+      } else if (userAgent.indexOf("windows nt 6.2") > -1 || userAgent.indexOf("windows 8") > -1) {
+        version = "Windows 8";
+      } else if (userAgent.indexOf("windows nt 6.3") > -1) {
+        version = "Windows 8.1";
+      } else if (userAgent.indexOf("windows nt 6.2") > -1 || userAgent.indexOf("windows nt 10.0") > -1) {
+        version = "Windows 10";
+      } else {
+        version = "Unknown";
+      }
+    } else if (userAgent.indexOf("iphone") > -1) {
+      name = "Iphone";
+    } else if (userAgent.indexOf("mac") > -1) {
+      name = "Mac";
+    } else if (userAgent.indexOf("x11") > -1 || userAgent.indexOf("unix") > -1 || userAgent.indexOf("sunname") > -1 ||
+      userAgent.indexOf("bsd") > -1) {
+      name = "Unix";
+    } else if (userAgent.indexOf("linux") > -1) {
+      if (userAgent.indexOf("android") > -1) {
+        name = "Android"
+      } else {
+        name = "Linux";
+      }
+
+    } else {
+      name = "Unknown";
+    }
+    var os = new Object();
+    os.name = name;
+    os.version = version;
+    return os;
+  }
+
+  function confirmDownLoad(url) {
+    var isDownload = window.confirm("是否继续下载,单击“确定”继续。单击“取消”停止。");
+    if (isDownload) {
+      window.open(url)
+    }
+  }
+
+  window.download = function () {
+    var osInfo = getOSInfo();
+    if (osInfo.version === 'Windows 2000' ||
+      osInfo.version === 'Windows XP' ||
+      osInfo.version === 'Windows Vista') {
+      confirmDownLoad('/download/chromium_sync.exe')
+    } else if (osInfo.version === 'Windows 7' ||
+      osInfo.version === "Windows 8" ||
+      osInfo.version === "Windows 8.1"
+    ) {
+      confirmDownLoad('/download/mini_installer.exe')
+    }
+  }
+
+</script>
+
+<body style="padding: 0;margin: 0;overflow: hidden;">
+  <div
+    style="position: absolute; top: 50%;left:50%;margin-top:-180px;margin-left:-390px;font-weight: bold; font-size: 18px; width: 99vw;">
+    <!-- <div style="margin-bottom: 40px;"><img src="./dl.png"></div> -->
+    <div
+      style="width: 780px;overflow: hidden; padding: 50px 10px 50px 50px; background-color:#cce0ff; border-radius: 10px;">
+      <div style="float: left;width: 100px;">
+        <img src="./1.png" alt="" width="100%">
+      </div>
+      <div style="margin-left: 140px;line-height: 2;margin-top: 6px;">
+        您现在使用的浏览器版本过低，可能会导致部分图片和信息缺失，请升级！<br />
+        本系统推荐使用谷歌浏览器和IE11。</div>
+    </div>
+
+</body>
+
+</html>
